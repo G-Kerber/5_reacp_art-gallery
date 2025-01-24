@@ -17,13 +17,26 @@ const StyledListItem = styled.li`
   min-width: 10rem;
 `;
 
-export default function ArtPiecesList({ artPieces }) {
+export default function ArtPiecesList({
+  artPieces,
+  handleToggleLike,
+  artPiecesInfo,
+}) {
   console.log("ArtPiecesList", artPieces);
+  console.log("artPiecesInfo", artPiecesInfo);
   return (
     <StyledArtPieces>
       {artPieces.map((artPiece) => (
         <StyledListItem key={artPiece.slug}>
-          <ArtPiecePreview artPiece={artPiece} />
+          <ArtPiecePreview
+            artPiece={artPiece}
+            handleToggleLike={handleToggleLike}
+            isLike={
+              artPiecesInfo.find(
+                (artPieceInfo) => artPiece.slug === artPieceInfo.slug
+              )?.isLike
+            }
+          />
         </StyledListItem>
       ))}
     </StyledArtPieces>

@@ -6,11 +6,19 @@ import {
 } from "../components/ArtPiece.styled";
 import FavoriteButton from "./FavoriteButton/FavoriteButton";
 
-export default function ArtPiecePreview({ artPiece }) {
+export default function ArtPiecePreview({
+  artPiece,
+  handleToggleLike,
+  isLike,
+}) {
   return (
     <>
       <StyledFigure>
-        <FavoriteButton />
+        <FavoriteButton
+          handleToggleLike={handleToggleLike}
+          isLike={isLike}
+          slug={artPiece.slug}
+        />
         <Link href={`/artpieces/${artPiece.slug}`}>
           <StyledImage src={artPiece.imageSource} alt={artPiece.name} fill />
         </Link>

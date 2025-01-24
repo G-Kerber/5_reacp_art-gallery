@@ -20,14 +20,14 @@ export default function App({ Component, pageProps }) {
       setArtPiecesInfo((prevArtPiecesInfo) =>
         prevArtPiecesInfo.map((pieceInfo) =>
           pieceInfo.slug === artPieceSlug
-            ? { ...pieceInfo, isLiked: !pieceInfo.isLiked }
+            ? { ...pieceInfo, isLike: !pieceInfo.isLike }
             : pieceInfo
         )
       );
     } else {
       setArtPiecesInfo((prevArtPiecesInfo) => [
         ...prevArtPiecesInfo,
-        { slug: artPieceSlug, isLiked: true },
+        { slug: artPieceSlug, isLike: true },
       ]);
     }
   }

@@ -19,10 +19,10 @@ export default function HomePage({
         <Spotlight
           randomArtPiece={randomArtPiece}
           handleToggleLike={() => handleToggleLike(randomArtPiece.slug)}
-          isFavorite={
+          isLike={
             artPiecesInfo.find(
               (artPieceInfo) => randomArtPiece.slug === artPieceInfo.slug
-            )?.isLiked
+            )?.isLike
           }
         />
       )}

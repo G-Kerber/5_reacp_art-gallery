@@ -15,14 +15,15 @@ const StyledDiv = styled.div`
 export default function Spotlight({
   randomArtPiece,
   handleToggleLike,
-  isFavorite,
+  isLike,
 }) {
   return (
     <StyledDiv>
       <StyledFigure>
         <FavoriteButton
           handleToggleLike={handleToggleLike}
-          isFavorite={isFavorite}
+          isLike={isLike}
+          slug={randomArtPiece.slug}
         />
         <StyledImage
           alt={randomArtPiece.name}
