@@ -5,6 +5,7 @@ export default function Favorites({
   handleToggleLike,
   artPiecesInfo,
 }) {
+
   const favorites = artPieces.filter((artPiece) =>
     artPiecesInfo.find(
       (artPieceInfo) =>
@@ -15,11 +16,13 @@ export default function Favorites({
   return (
     <div>
       <h1>Art Gallery</h1>
+
       <ArtPiecesList
         artPieces={favorites}
         handleToggleLike={handleToggleLike}
         artPiecesInfo={artPiecesInfo}
       />
+
     </div>
   );
 }
