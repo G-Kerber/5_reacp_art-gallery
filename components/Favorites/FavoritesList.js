@@ -17,13 +17,13 @@ const StyledListItem = styled.li`
   min-width: 10rem;
 `;
 
-export default function FavoriesList({ artPiecesLiked, onToggleLike }) {
+export default function FavoriesList({ artPiecesLike, onToggleLike }) {
   return (
     <StyledArtPieces>
-      {artPiecesLiked.map((artPieceLiked) => (
-        <StyledListItem key={artPieceLiked.slug}>
+      {artPiecesLike.map((artPieceLike) => (
+        <StyledListItem key={artPieceLike.slug}>
           <FavoritePreview
-            artPieceLiked={artPieceLiked}
+            artPieceLike={artPieceLike}
             onToggleLike={onToggleLike}
           />
         </StyledListItem>

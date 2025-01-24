@@ -4,17 +4,17 @@ import {
   StyledCaption,
 } from "../../components/ArtPiece.styled";
 
-export default function ArtPiecePreview({ artPieceLiked, onToggleLike }) {
+export default function ArtPiecePreview({ artPieceLike, onToggleLike }) {
   return (
     <>
       <StyledFigure>
         <StyledImage
-          src={artPieceLiked.imageSource}
-          alt={artPieceLiked.name}
+          src={artPieceLike.imageSource}
+          alt={artPieceLike.name}
           fill
         />
         <StyledCaption>
-          {artPieceLiked.name} by {artPieceLiked.artist}
+          {artPieceLike.name} by {artPieceLike.artist}
         </StyledCaption>
       </StyledFigure>
     </>
