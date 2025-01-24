@@ -1,11 +1,10 @@
 import ArtPiecesList from "@/components/ArtPiecesList";
 
-export default function Favorites({ artPieces }) {
-  const artPiecesInfo = [
-    { slug: "orange-red-and-green", isLike: true },
-    { slug: "blue-and-red", isLike: true },
-    { slug: "body-of-water", isLike: false },
-  ];
+export default function Favorites({
+  artPieces,
+  handleToggleLike,
+  artPiecesInfo,
+}) {
 
   const favorites = artPieces.filter((artPiece) =>
     artPiecesInfo.find(
@@ -17,7 +16,13 @@ export default function Favorites({ artPieces }) {
   return (
     <div>
       <h1>Art Gallery</h1>
-      <ArtPiecesList artPieces={favorites} />
+
+      <ArtPiecesList
+        artPieces={favorites}
+        handleToggleLike={handleToggleLike}
+        artPiecesInfo={artPiecesInfo}
+      />
+
     </div>
   );
 }

@@ -12,11 +12,19 @@ const StyledDiv = styled.div`
   min-width: 10rem;
 `;
 
-export default function Spotlight({ randomArtPiece }) {
+export default function Spotlight({
+  randomArtPiece,
+  handleToggleLike,
+  isLike,
+}) {
   return (
     <StyledDiv>
       <StyledFigure>
-        <FavoriteButton />
+        <FavoriteButton
+          handleToggleLike={handleToggleLike}
+          isLike={isLike}
+          slug={randomArtPiece.slug}
+        />
         <StyledImage
           alt={randomArtPiece.name}
           src={randomArtPiece.imageSource}

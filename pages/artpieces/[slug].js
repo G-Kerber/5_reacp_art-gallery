@@ -16,7 +16,11 @@ const StyledDiv = styled.div`
   min-width: 10rem;
 `;
 
-export default function ArtPieceDetails({ artPieces }) {
+export default function ArtPieceDetails({
+  artPieces,
+  handleToggleLike,
+  artPiecesInfo,
+}) {
   const router = useRouter();
   const { slug } = router.query;
   const artPiece = artPieces.find((artPiece) => artPiece.slug === slug);
@@ -32,7 +36,11 @@ export default function ArtPieceDetails({ artPieces }) {
       </div>
       <StyledDiv>
         <StyledFigure>
-          <FavoriteButton />
+          <FavoriteButton
+            handleToggleLike={handleToggleLike}
+            isLike={artPiece.slug === artPieceInfo.slug?.isLike}
+            slug={artPiece.slug}
+          />
           <StyledImage alt={artPiece.name} src={artPiece.imageSource} fill />
           <StyledCaption>
             {artPiece.name} by {artPiece.artist}
