@@ -1,18 +1,23 @@
-import FavoritesList from "@/components/Favorites/FavoritesList";
+import ArtPiecesList from "@/components/ArtPiecesList";
 
-export default function Favorites({ artPieces, onToggleLike }) {
-  const artPiecesLiked1 = artPieces.filter(
-    (artPiece) => artPiece.isLiked === true
+export default function Favorites({ artPieces }) {
+  const artPiecesInfo = [
+    { slug: "orange-red-and-green", isLike: true },
+    { slug: "blue-and-red", isLike: true },
+    { slug: "body-of-water", isLike: false },
+  ];
+
+  const favorites = artPieces.filter((artPiece) =>
+    artPiecesInfo.find(
+      (artPieceInfo) =>
+        artPieceInfo.slug === artPiece.slug && artPieceInfo.isLike
+    )
   );
-  const artPiecesLiked = artPieces;
 
   return (
     <div>
       <h1>Art Gallery</h1>
-      <FavoritesList
-        artPiecesLiked={artPiecesLiked}
-        onToggleLike={onToggleLike}
-      />
+      <ArtPiecesList artPieces={favorites} />
     </div>
   );
 }
