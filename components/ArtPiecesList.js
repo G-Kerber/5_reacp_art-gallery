@@ -22,8 +22,6 @@ export default function ArtPiecesList({
   handleToggleLike,
   artPiecesInfo,
 }) {
-  console.log("ArtPiecesList", artPieces);
-  console.log("artPiecesInfo", artPiecesInfo);
   return (
     <StyledArtPieces>
       {artPieces.map((artPiece) => (
